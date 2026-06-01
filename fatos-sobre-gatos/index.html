@@ -1,73 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CatFact Explorer</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatos sobre Gatos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
 
-    <!-- Cabecalho -->
-    <header class="header">
-      <span class="cat-icon">🐱</span>
-      <h1>CatFact Explorer</h1>
-      <p>Curiosidades sobre gatos via API publica</p>
-    </header>
+    <div class="container">
+        <h1>🐾 Fatos sobre Gatos</h1>
+        <p class="subtitulo">Descubra curiosidades felinas</p>
 
-    <!-- Estatisticas -->
-    <section class="stats">
-      <div class="stat">
-        <span class="stat-label">Fatos na lista</span>
-        <span class="stat-value" id="stat-total">0</span>
-      </div>
-      <div class="stat">
-        <span class="stat-label">Maior (chars)</span>
-        <span class="stat-value" id="stat-maior">—</span>
-      </div>
-      <div class="stat">
-        <span class="stat-label">Media (chars)</span>
-        <span class="stat-value" id="stat-media">—</span>
-      </div>
-    </section>
+        <div class="caixa-formulario">
+            <form id="form">
+                <label for="tamanhoTexto">Informe o tamanho do texto:</label>
+                <div class="linha-input">
+                    <input type="number" id="tamanhoTexto" placeholder="Entre 20 e 250">
+                    <button type="submit">Buscar 🐱</button>
+                </div>
+                <span id="mensagemErro"></span>
+            </form>
 
-    <!-- Formulario de busca -->
-    <form id="meuForm" class="form-section">
-      <label for="qtd" class="form-label">🐟 Quantos fatos devo trazer?</label>
-
-      <div class="form-row">
-        <input type="number" id="qtd" min="1" max="10" placeholder="1 a 10">
-        <button type="submit" id="botaoBuscar">🐾 Buscar fatos</button>
-      </div>
-
-      <!-- Elemento que recebe a mensagem de erro -->
-      <span id="erroQtd" class="msg-erro"></span>
-
-      <!-- Aviso de carregamento -->
-      <div id="loading" class="loading-state" hidden>
-      </div>
-    </form>
-
-    <!-- Resultados -->
-    <section>
-      <div class="section-header">
-        <span class="section-title">🧶 Resultados</span>
-        <button id="botaoLimpar" class="clear-btn" hidden>🗑 Limpar</button>
-      </div>
-
-      <div id="lista">
-        <div class="empty-state">
-          <span class="empty-icon">🐾</span>
-          <p>Nenhum fato buscado ainda.</p>
-          <p>Escolha a quantidade e clique em "Buscar fatos".</p>
+            <div id="resultado"></div>
         </div>
-      </div>
-    </section>
+    </div>
 
-  </main>
-
-  <!-- Script no final do body: garante que o DOM ja foi carregado -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
